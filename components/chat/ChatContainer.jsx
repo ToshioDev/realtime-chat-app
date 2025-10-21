@@ -228,7 +228,7 @@ const ChatContainer = () => {
                     </>
                 ) : (
                     <div className="w-full self-stretch grow text-accent_1 bg-primary shadow-xl rounded-md flex items-center justify-center ">
-                        Select a chat to talk to
+Selecciona un chat para hablar
                     </div>
                 )}
             </>

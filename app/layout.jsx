@@ -12,6 +12,8 @@ import { siteConfig } from "@config/site";
 import { FreeTierNotice } from "@components/free-tier-notice";
 
 export const metadata = {
+  title: "Pulse Chat v1.0",
+  description: "Pulse Chat v1.0 - Conecta, chatea y comparte en tiempo real.",
     title: {
         default: siteConfig.name,
         template: `%s | ${siteConfig.name}`,
@@ -44,9 +46,15 @@ const RootLayout = ({ children }) => {
                             {/* This is just to showcase that project is hosted on free tiers and may take time to wake up */}
                             <FreeTierNotice />
 
-                            <main className="relative h-screen flex-center py-8 px-4 md:p-8 bg-main">
-                                {children}
-                            </main>
+{/* Header removido en pantallas de login y registro */}
+
+<main className="relative h-screen flex-center py-8 px-4 md:p-8 bg-main">
+    {children}
+</main>
+
+<footer className="w-full text-center py-4 bg-gray-900 text-gray-400 text-sm">
+    © 2025 Pulse Chat v1.0 — Conecta, chatea y comparte en tiempo real.
+</footer>
                         </SocketProvider>
                     </Provider>
                 </EdgeStoreProvider>

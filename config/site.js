@@ -1,4 +1,4 @@
 export const siteConfig = {
-    name: "Chatly",
-    description: "Seamless and engaging conversations",
+    name: "Pulse Chat",
+    description: "Conecta, chatea y comparte en tiempo real",
 };

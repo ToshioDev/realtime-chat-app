@@ -35,31 +35,37 @@ const Login = () => {
 
             if (res.error) {
                 setLoading(false);
-                toast.error("Invalid credentials");
+toast.error("Credenciales inválidas");
                 return;
             }
             socket?.emit("REGISTER", { email: formData.email });
             localStorage.setItem("UserEmail", JSON.stringify(formData.email));
-            toast.success("Login successfully");
+toast.success("Inicio de sesión exitoso");
             //if everything goes well
             router.replace("/chat");
         } catch (error) {
             console.log("an error occured while logging ", error);
-            toast.error(error.message || "Something went wrong");
+toast.error(error.message || "Ocurrió un error");
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <section className="max-w-md mx-auto bg-primary mt-[10vh] side-p rounded-3xl border border-solid border-gray px-4 pt-10 pb-[2.69rem] ">
-            <h1 className="text-heading font-bold text-lg leading-normal mb-7">Login</h1>
+<section className="mt-[10vh] bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 shadow-lg md:max-w-md mx-auto md:h-auto md:max-h-login px-8 py-10 rounded-3xl border border-gray-700 text-white transition-all duration-300 hover:shadow-blue-500/20">
+<div className="text-center mb-8">
+    <h1 className="text-3xl font-extrabold text-blue-400 tracking-wide">Pulse Chat</h1>
+    <p className="text-gray-400 text-sm mt-1">Bienvenido de nuevo</p>
+</div>
+<div className="bg-green-100 border border-green-300 text-green-800 p-3 rounded-md mb-5 text-sm">
+    Inicia sesión con tu cuenta. Para hablar conmigo, agrégame con el correo <strong>leonreyesjosealexis@gmail.com</strong> (usuario: <strong>leonreyesjosealexis</strong>).
+</div>
             <form onSubmit={handleSubmit}>
                 <div className="grid gap-2">
                     <div className="grid gap-1">
-                        <Label className="sr-only" htmlFor="email">
-                            Email
-                        </Label>
+<Label className="sr-only" htmlFor="email">
+    Correo electrónico
+</Label>
                         <Input
                             id="email"
                             placeholder="name@example.com"
@@ -79,9 +85,9 @@ const Login = () => {
                         />
                     </div>
                     <div className="grid gap-1">
-                        <Label className="sr-only" htmlFor="password">
-                            Password
-                        </Label>
+<Label className="sr-only" htmlFor="password">
+    Contraseña
+</Label>
                         <Input
                             id="password"
                             placeholder="password"
@@ -97,13 +103,13 @@ const Login = () => {
                             }
                         />
                     </div>
-                    <Button
-                        disabled={loading}
-                        variant="default"
-                        className="text-accent_1 mt-4 hover:outline transition"
-                    >
-                        {loading ? "Please Wait..." : "Login "}
-                    </Button>
+<Button
+    disabled={loading}
+    variant="default"
+    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 mt-6 rounded-lg transition-all duration-200"
+>
+{loading ? "Iniciando sesión..." : "Iniciar sesión"}
+</Button>
                 </div>
             </form>
 
